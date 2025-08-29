@@ -1,0 +1,14 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "SSG 테스트",
+      "content": "SSG 테스트 내용"
+    },
+    {
+      "id": 2,
+      "title": "SSG 테스트2",
+      "content": "SSG 테스트 내용2"
+    }
+  ]
+}

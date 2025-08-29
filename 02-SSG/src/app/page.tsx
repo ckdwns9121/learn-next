@@ -2,7 +2,7 @@
 async function getStaticData() {
   // 빌드 시점에 데이터를 가져옴
   const response = await fetch("https://jsonplaceholder.typicode.com/posts/2", {
-    next: { revalidate: 3600 }, // 1시간마다 재검증
+    next: { revalidate: 3600, tags: ["post"] }, // 1시간마다 재검증
   });
   const data = await response.json();
   return data;
