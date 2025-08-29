@@ -1,8 +1,16 @@
-// SSG를 위한 데이터 페칭 함수
+/**
+ * 빌드 시점에 데이터를 가져옴
+ * 데이터가 자주 변경되지 않는 콘텐츠에 적합
+ * 빌드 시점에 모든 페이지를 미리 생성
+ * 매우 빠른 로딩 속도
+ * CDN 배포로 전 세계 어디서나 빠른 접근
+ * force-cache 옵션은 fetch 함수의 기본 옵션임
+ * 말그대로 무조건 캐시를 강제로 사용한다라는 뜻
+ */
 async function getStaticData() {
   // 빌드 시점에 데이터를 가져옴
   const response = await fetch("https://jsonplaceholder.typicode.com/posts/2", {
-    next: { revalidate: 3600, tags: ["post"] }, // 1시간마다 재검증
+    cache: "force-cache",
   });
   const data = await response.json();
   return data;
