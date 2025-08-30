@@ -1,13 +1,15 @@
 import Link from "next/link";
 
-type Props = {
+// 타입을 선언해서 params를 받을 수 있음.
+// 이전에는 next/router의 useRouter로 받았어야했는데
+type UserPageProps = {
   params: {
     id: string;
   };
 };
 
 // 동적 메타데이터 생성
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: UserPageProps) {
   return {
     title: `사용자 ${params.id} - Dynamic Router`,
     description: `사용자 ${params.id}의 프로필 페이지입니다.`,
@@ -21,7 +23,7 @@ async function getUserData(id: string) {
   return user;
 }
 
-export default async function UserPage({ params }: Props) {
+export default async function UserPage({ params }: UserPageProps) {
   const user = await getUserData(params.id);
 
   return (

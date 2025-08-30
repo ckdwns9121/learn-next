@@ -1,17 +1,20 @@
 {
-  "name": "01-ssr-learning",
+  "name": "05-server-action-learning",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3001",
+    "dev": "next dev -p 3005",
     "build": "next build",
-    "start": "next start -p 3001",
+    "start": "next start -p 3005",
     "lint": "next lint"
   },
   "dependencies": {
     "next": "14.0.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "zod": "^3.22.4",
+    "react-hook-form": "^7.48.2",
+    "@hookform/resolvers": "^3.3.2"
   },
   "devDependencies": {
     "@types/node": "^20",
